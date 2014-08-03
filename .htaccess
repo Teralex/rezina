@@ -1,0 +1,11 @@
+RewriteEngine   On
+RewriteBase     /~Alex/123/rezina
+
+RewriteRule ^((css|images|js)\/.*)$     $1  [L]
+
+RewriteRule     .*                          index.php  [L]
+
+#RewriteBase     /123
+
+
+

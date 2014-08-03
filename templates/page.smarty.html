@@ -1,0 +1,80 @@
+<div class="b-acc-form">
+	<div class="b-gf-row">
+    	<a href="exit">Выход</a>
+    	<p> Добро пожаловать {$user['login']} </p>	                            
+		<form method="get"> 
+		 	<table>
+{foreach from=$data['pageQnt'] item=pages}
+		    	<a href="page?page={$pages}&name={$data['name']}">{$pages+1} </a>
+{/foreach}
+		        <td>
+		        <a href="page?page={$data['page']}&name=ProductID">ID</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductID']}</p>
+{/foreach}
+				<td>       	
+
+		        <a href="page?page={$data['page']}&name=ProductBrand">Brand</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductBrand']}</p>
+{/foreach}
+				</td>
+				<td>
+
+		        <a href="page?page={$data['page']}&name=ProductModel">Model</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductModel']}</p>
+{/foreach}
+				</td>
+				<td> 
+
+		        <a href="page?page={$data['page']}&name=ProductProf">Prof</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductProf']}</p>
+{/foreach}
+				</td>
+				<td> 
+
+		        <a href="page?page={$data['page']}&name=ProductWidth">Width</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductWidth']}</p>
+{/foreach}
+				</td>
+				<td>
+
+		        <a href="page?page={$data['page']}&name=ProductRad">Rad</a>
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductRad']}</p>
+{/foreach}
+				</td>
+				<td>
+
+		        <a href="page?page={$data['page']}&name=ProductSpeed">Speed</a>       	
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductSpeed']}</p>
+{/foreach}
+				</td>
+				<td>
+
+		        <a href="page?page={$data['page']}&name=ProductEnc">Enc</a>	       	
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductEnc']}</p>
+{/foreach}
+				</td>
+				<td> 
+		        <a href="page?page={$data['page']}&name=ProductPrice">Price</a>      	
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductPrice']}</p>
+{/foreach}
+				</td>
+				<td>
+
+		        <a href="page?page={$data['page']}&name=ProductAvail">Avail</a>       	
+{foreach from=$data['data'] item=item}
+				   <p>{$item['ProductAvail']}</p>
+{/foreach}
+				</td>
+			</table>
+		</form>
+	</div>
+</div>

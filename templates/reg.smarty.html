@@ -1,0 +1,68 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="template/style.css" type="text/css" />
+<script src="{$selfPath}/js/jquery.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript"></script>
+<form method="post"	onSubmit="return Reg(this)">
+<table align="center" id="reg_table" cellspacing="10" border="0">
+	<tr>
+		<td>Логин:</td>
+		<td>
+			<input id="login" type="text" name="login" />
+		</td>
+	</tr>
+	<tr>
+		<td>Пароль:</td>
+		<td>
+			<input id="pass" type="password" name="password" /><br />
+		</td>
+	</tr>
+	<tr>
+		<td>Повтор пароля:</td>
+		<td>
+			<input id="re_pass" type="password" name="password2" /><br />
+		</td>
+	</tr>
+	<tr>
+		<td>Email:</td>
+		<td><input id="mail" type="text" name="mail" /><br />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<label><input id="no_xyz" type="checkbox" name="lic" value="ok" />
+			Правила регистрации</label><br />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input class="button" type="submit" name="GO" value="Зарегистрироваться">
+		</td>
+	</tr>
+</table>
+</form>
+
+<script>
+function Reg (f) 
+{
+    var url = '{$selfPath}/registration';
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: 'ajax=1&'+$(f).serialize(),
+        success: function(txt){
+        		alert(txt)
+        },
+        error: function(){
+            alert('Ошибка сети, попробуйте позже')
+        }
+    });
+    return false;
+}
+</script>
+</body>
+</html>
